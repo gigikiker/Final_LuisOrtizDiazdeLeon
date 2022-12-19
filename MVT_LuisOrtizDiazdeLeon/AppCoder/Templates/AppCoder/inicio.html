@@ -1,0 +1,26 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+    <br>
+    <center><h1><b style = "color:blue">Bienvenid@s</b></h1>
+    <p><h2>Somos la primer Academia Pokemon en Mexico</h2></p>
+    
+    <body>
+        <b><h3 style = "color:red">{{actual}}</h3></b>
+        <br>
+        <br>
+        <h4 style = "color:green">La Navidad se Acerca!!</h4>
+        <div class="contenedor">
+            <img alt="Christmas Commission - Natsu and Pokemon friends" aria-hidden="true" class="TZM0T _2NIJr" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/22b68b77-059a-4549-b9b4-133707f706f0/ddmnuys-f7586b02-54b5-4fde-90df-f3642955fb76.png/v1/fill/w_1280,h_1772,strp/christmas_commission___natsu_and_pokemon_friends_by_bunnyhana_ddmnuys-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTc3MiIsInBhdGgiOiJcL2ZcLzIyYjY4Yjc3LTA1OWEtNDU0OS1iOWI0LTEzMzcwN2Y3MDZmMFwvZGRtbnV5cy1mNzU4NmIwMi01NGI1LTRmZGUtOTBkZi1mMzY0Mjk1NWZiNzYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.pgZRNMuVy1VznAui6Amx_gZ4CRelxd7-m3h4UGtkxnM" srcset="" style="width: 301.941px; height: 418px;">  
+          </div>
+          <h4 style = "color:red">Faltan {{navidad}} para {{christmas}}</h4>
+        <br>
+        <br>
+    </body>
+    </center>
+    {% endblock %}

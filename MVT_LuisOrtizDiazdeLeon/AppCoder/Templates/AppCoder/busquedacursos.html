@@ -1,0 +1,20 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+    <br>
+    <center>
+        <form action="/AppCoder/Buscar/"     method="get"> {% csrf_token %}
+            <h1>Buscar Curso</h1>
+            <p>Introduce el ID del curso:</p>
+            <input type="number" name="indicador" id="ID">
+            <input type="submit" value="Buscar">
+        </form>
+        <br>
+        <br>
+    </center>
+    {% endblock %}

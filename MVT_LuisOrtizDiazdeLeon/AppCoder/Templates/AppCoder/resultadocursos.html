@@ -1,0 +1,31 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+    <br>
+    <center>
+        <h1 style = "color:brown">Resultados:</h1>
+        <br>
+        <b style="color:blue">⬇️ ID ⬇️</b> 
+        <br>{{indicador}}
+        <br>
+        <br>
+        <b style="color:blue"> ⬇️ Nombre del Curso ⬇️</b> 
+        <br>{%for curso in cursos%}
+            {{curso.nombre}}        
+        <br>
+        {%endfor%}
+        <br>
+        <b style="color:blue"> ⬇️ Entrenadores Inscritos ⬇️</b> 
+        <br>{%for entrenadores in entrenadores%}
+            • {{entrenadores.nombre}} {{entrenadores.apellido}}      
+        <br>
+        {%endfor%}
+        <br>
+        <br>
+    </center>
+    {% endblock %}

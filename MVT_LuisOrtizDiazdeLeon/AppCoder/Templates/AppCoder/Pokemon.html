@@ -1,0 +1,28 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+    <center>
+    <br>
+    <h1><p style="color:blue">Almacenamiento de Pokemon Atrapados</p></h1>
+    <br>
+    
+    Registra el nuevo Pokemon atrapado: 
+    <br>
+    <br>
+    <form action=""     method="post"> {% csrf_token %}
+        <table>
+            {{miFormulario.as_table}}
+        </table>
+        <br>
+        <input type="submit", value="Enviar">
+    </form>
+    </center>
+    <br>
+    <br>
+    {% endblock %}
+    

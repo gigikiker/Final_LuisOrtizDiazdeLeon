@@ -1,0 +1,40 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+    <br>
+    <center>
+        <h1 style = "color:brown">Resultados:</h1>
+        <br>
+        <b style="color:blue">⬇️ Badge # ⬇️</b> 
+        <br>{{badge}}
+        <br>
+        <br>
+        <b style="color:blue"> ⬇️ Nombre del Entrenador ⬇️</b> 
+        <br>{%for entrenadores in entrenadores%}
+        {{entrenadores.nombre}} {{entrenadores.apellido}}      
+        <br>
+        {%endfor%}
+        <br>
+        <b style="color:blue"> ⬇️ Email ⬇️</b> 
+        <br>{%for entrenadores in entrenadores%}
+        {{entrenadores.email}}  
+        <br>
+        {%endfor%}
+        <br>
+        <b style="color:blue"> ⬇️ ID de Cursos Tomados ⬇️</b> 
+        <br>{%for entrenadores in entrenadores%}
+            {{entrenadores.indicador}}    
+        <br>
+        {%endfor%}
+        <br>
+        <b style="color:blue"> ⬇️ Pokemon Atrapados ⬇️</b> 
+        <br>{%for pokemon in pokemon%}
+            • {{pokemon.nombre}}  <br>
+            {%endfor%}
+    </center>
+    {% endblock %}

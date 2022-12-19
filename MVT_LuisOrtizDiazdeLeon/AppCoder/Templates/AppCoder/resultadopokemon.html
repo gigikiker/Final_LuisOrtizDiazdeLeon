@@ -1,0 +1,28 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+    <br>
+    <center>
+        <h1 style = "color:brown">Resultados:</h1>
+        <br>
+        <b style="color:blue">⬇️ Nombre del Pokemon ⬇️</b> 
+        <br>{{nombre}}
+        <br>
+        <br>
+        <b style="color:blue"> ⬇️ Datos ⬇️</b> 
+        <br>{%for pokemon in pokemon%}
+            • <b>Tipo:</b> {{pokemon.tipo}} <br>
+            • <b>Sexo:</b> {{pokemon.sexo}} <br>
+            • <b>Fecha de Captura:</b> {{pokemon.fecha_de_captura}} <br>
+            • <b>¿En equipo?:</b> {{pokemon.en_equipo}} <br>
+            • <b>#Badge del Entrenador:</b> {{pokemon.badge}} <br>
+         {%endfor%}
+        <br>
+        <br>
+        </center>
+    {% endblock %}
