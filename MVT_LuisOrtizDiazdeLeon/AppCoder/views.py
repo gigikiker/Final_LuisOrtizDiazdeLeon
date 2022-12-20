@@ -124,3 +124,55 @@ def Entrenadoresapi(request):
 def Pokemonapi(request):
     pokemon_todos= Pokemon.objects.all()
     return HttpResponse(serializers.serialize('json',pokemon_todos)) 
+
+#CRUD>> CREATE, READ, UPDATE & DELETE
+
+def leer_cursos(request):
+    cursos_all = Curso.objects.all()
+    return HttpResponse(serializers.serialize('json',cursos_all))
+
+def crear_cursos(request):
+    curso = Curso(nombre="CursoTest",indicador=199)
+    curso.save()
+    return HttpResponse(f'Curso {curso.nombre} ha sido creado')
+
+def editar_cursos(request):
+    nombre_consulta = 'CursoTest'
+    Curso.objects.filter(nombre=nombre_consulta).update(nombre='NombrenuevoCursoTest')
+    return HttpResponse(f'Curso {nombre_consulta} ha sido actualizado')
+
+def eliminar_cursos(request):
+    nombre_nuevo = 'NombrenuevoCursoTest'
+    curso = Curso.objects.get(nombre=nombre_nuevo)
+    curso.delete()
+    return HttpResponse(f'Curso {nombre_nuevo} ha sido eliminado')
+
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
+
+class CursoList(ListView):
+    model = Curso
+    template = 'AppCoder/curso_list.html'
+
+class CursoCreate(CreateView):
+    model = Curso
+    fields = '__all__'
+    success_url = '/AppCoder/curso/list/'
+
+class EntrenadoresList(ListView):
+    model = Entrenadores
+    template = 'AppCoder/entrenadores_list.html'
+
+class EntrenadoresCreate(CreateView):
+    model = Entrenadores
+    fields = '__all__'
+    success_url = '/AppCoder/entrenadores/list/'
+
+class PokemonList(ListView):
+    model = Pokemon
+    template = 'AppCoder/pokemon_list.html'
+
+class PokemonCreate(CreateView):
+    model = Pokemon
+    fields = '__all__'
+    success_url = '/AppCoder/pokemon/list/'

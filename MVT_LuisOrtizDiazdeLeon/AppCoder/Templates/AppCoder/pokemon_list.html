@@ -1,0 +1,29 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+    <br>
+    <center><h1><b style = "color:blue">Lista de Pokemon</b></h1>
+    <br>
+    {%for pokemon in object_list%}
+      <p><h5><FONT COLOR="red">‡</FONT> {{pokemon.nombre}} <FONT COLOR="red">‡</FONT>
+      <br>{{pokemon.fecha_de_captura}}</h5></p>
+        <a href="">Ver</a>
+        <a href="">Editar</a>
+        <a href="">Borrar</a>
+      <br>
+      <br>
+
+
+    
+    
+    
+      {%endfor%}
+    <br>
+    <br>
+    </center>
+    {% endblock %}

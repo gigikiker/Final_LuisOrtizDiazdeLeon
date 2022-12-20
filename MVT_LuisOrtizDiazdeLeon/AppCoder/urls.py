@@ -15,4 +15,15 @@ urlpatterns = [
     path("PokemonApi/",views.Pokemonapi),
     path("Entrenadores/", views.FEntrenadores,name='Entrenadores'),
     path("Pokemon/", views.FPokemon,name='Pokemon'),
+    path("leercursos/", views.leer_cursos), #clase 23
+    path("crearcurso/", views.crear_cursos),
+    path("editarcurso/", views.editar_cursos),
+    path("eliminarcurso/", views.eliminar_cursos),
+    path("curso/list/", views.CursoList.as_view()),
+    path("curso/create/", views.CursoCreate.as_view()),
+    path("entrenadores/list/", views.EntrenadoresList.as_view()),
+    path("entrenadores/create/", views.EntrenadoresCreate.as_view()),
+    path("pokemon/list/", views.PokemonList.as_view()),
+    path("pokemon/create/", views.PokemonCreate.as_view()),
+
 ]

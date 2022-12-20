@@ -46,7 +46,7 @@ def fechas_navidad(self):
         'navidad':restantes
     }
 
-    miHtml = open("C:/Users/luizi/Documents/Curso Python/Clase 19/MVT_LuisOrtizDiazdeLeon/AppCoder/Templates/AppCoder/Inicio.html")
+    miHtml = open("C:/Users/luizi/Documents/Curso Python/Proyecto Final/Final_LuisOrtizDiazdeLeon/MVT_LuisOrtizDiazdeLeon/AppCoder/Templates/AppCoder/Inicio.html")
     #miHtml = open(TEMPLATES_PATH+"/template1.html")
 
     plantilla = Template(miHtml.read()) #Se carga en memoria nuestro documento, template1   

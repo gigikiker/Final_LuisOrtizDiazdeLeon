@@ -1,0 +1,27 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<br>
+<center><h1><b style = "color:blue">Agregar Entrenador</b></h1>
+<br>
+<form action=""     method="post"> {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <br>
+    <input type="submit" value="Crear">
+</form>
+<br>
+<br>
+<b style = "color:rgb(255, 0, 0)">*Indicador = ID del Curso
+<br>
+**Badge = ID del entrenador
+</b>
+<br>
+<br>
+<br>
+<br>
+</center>
+{% endblock %}
