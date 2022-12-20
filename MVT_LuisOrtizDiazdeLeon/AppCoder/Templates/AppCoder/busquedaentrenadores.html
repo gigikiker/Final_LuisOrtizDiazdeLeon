@@ -5,16 +5,17 @@
 {% block contenidoQueCambia %}
 
 
-    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+    <
     <br>
     <center>
         <form action="/AppCoder/BuscarE/"     method="get"> {% csrf_token %}
-            <h1>Buscar Entrenador</h1>
-            <p>Introduce el Numero de Badge del Entrenador:</p>
+            <h1><b style = "color:blue">Buscar Entrenador</b></h1>
+            <h5><p>Introduce el Numero de Badge del Entrenador:</p>
             <input type="number" name="badge" id="ID">
-            <input type="submit" value="Buscar">
+            <input type="submit" value="Buscar"></h5>
         </form>
         <br>
+        <br><h5><a href="{% url 'Busquedas'%}"> Regresar ↵ </a></h5>
         <br>
     </center>
     {% endblock %}

@@ -5,23 +5,33 @@
 {% block contenidoQueCambia %}
 
 
-    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+
     <br>
     <center>
-        <h1 style = "color:brown">Resultados:</h1>
+        <h1 style = "color:rgb(35, 255, 1)">Resultados:</h1>
         <br>
-        <b style="color:blue">⬇️ Nombre del Pokemon ⬇️</b> 
+        <h5><b style="color:blue"> 🟆 Nombre del Pokemon 🟆 </b> 
         <br>{{nombre}}
         <br>
         <br>
-        <b style="color:blue"> ⬇️ Datos ⬇️</b> 
-        <br>{%for pokemon in pokemon%}
-            • <b>Tipo:</b> {{pokemon.tipo}} <br>
-            • <b>Sexo:</b> {{pokemon.sexo}} <br>
-            • <b>Fecha de Captura:</b> {{pokemon.fecha_de_captura}} <br>
-            • <b>¿En equipo?:</b> {{pokemon.en_equipo}} <br>
-            • <b>#Badge del Entrenador:</b> {{pokemon.badge}} <br>
+        <b style="color:blue"> 🟆 Datos 🟆 </b> 
+        {%for pokemon in pokemon%}
+        <h5><FONT COLOR="red">Tipo: </FONT>{{pokemon.tipo}} 
+            <br> 
+            <br><FONT COLOR="red">Sexo: </FONT>{{pokemon.sexo}} 
+            <br>
+            <br><FONT COLOR="red">Fecha de Captura: </FONT>{{pokemon.fecha_de_captura}} 
+            <br>
+            <br><FONT COLOR="red">Badge del Entrenador: </FONT>{{pokemon.badge}} 
+            <br>
+            <br><FONT COLOR="red">¿En equipo actual?:</FONT> {{pokemon.en_equipo}}</h5>
+            <br>
+           
          {%endfor%}
+        <br>
+        <h5><a href="{%url 'ListP'%}">Ver todos los Pokemon Atrapados</a>
+        <br>    
+        <br><a href="{% url 'BuscarP'%}"> Regresar ↵</a></h5>
         <br>
         <br>
         </center>

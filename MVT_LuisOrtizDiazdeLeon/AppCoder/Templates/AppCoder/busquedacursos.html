@@ -5,16 +5,18 @@
 {% block contenidoQueCambia %}
 
 
-    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+
     <br>
     <center>
         <form action="/AppCoder/Buscar/"     method="get"> {% csrf_token %}
-            <h1>Buscar Curso</h1>
-            <p>Introduce el ID del curso:</p>
+            <h1><b style = "color:blue">Buscar Curso</b></h1>
+            <h5><p>Introduce el ID del curso:</p>
             <input type="number" name="indicador" id="ID">
-            <input type="submit" value="Buscar">
+            <input type="submit" value="Buscar"></h5>
         </form>
         <br>
+        <br><h5><a href="{% url 'Busquedas'%}"> Regresar ↵ </a></h5>
         <br>
     </center>
+    
     {% endblock %}

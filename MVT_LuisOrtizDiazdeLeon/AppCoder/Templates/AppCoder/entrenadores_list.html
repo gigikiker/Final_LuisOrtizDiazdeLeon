@@ -4,17 +4,15 @@
 
 {% block contenidoQueCambia %}
 
-
-    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
     <br>
     <center><h1><b style = "color:blue">Lista de Entrenadores</b></h1>
     <br>
     {%for entrenadores in object_list%}
       <p><h5><FONT COLOR="red">‡</FONT> {{entrenadores.nombre}} {{entrenadores.apellido}} <FONT COLOR="red">‡</FONT>
       <br>Badge: #{{entrenadores.badge}} </h5></p>
-        <a href="">Ver</a>
-        <a href="">Editar</a>
-        <a href="">Borrar</a>
+        <a href="{% url 'DetailE' entrenadores.id %}">Ver</a>
+        <a href="{% url 'EditE' entrenadores.id %}">Editar</a>
+        <a href="{% url 'DeleteE' entrenadores.id %}">Borrar</a>
       <br>
       <br>
 
@@ -24,6 +22,8 @@
     
       {%endfor%}
     <br>
+    <!--<br><h5><a href="{% url 'BuscarE'%}"> Buscar por Badge de Entrenador 🔍 </a></h5> -->
+    <br><h5><a href="{% url 'Inicio'%}"> Ir a Inicio 🏠 </a></h5>
     <br>
     </center>
     {% endblock %}

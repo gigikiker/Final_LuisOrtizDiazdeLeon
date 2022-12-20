@@ -1,0 +1,26 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+    <br>
+    <center><h1><b style = "color:blue">Detalle del Pokemon</b></h1>
+        <br>
+            <p><h5>
+            <FONT COLOR="red">Nombre: </FONT>{{pokemon.nombre}} 
+            <br>
+            <br><FONT COLOR="red">Tipo: </FONT>{{pokemon.tipo}} 
+            <br> 
+            <br><FONT COLOR="red">Sexo: </FONT>{{pokemon.sexo}} 
+            <br>
+            <br><FONT COLOR="red">Fecha de Captura: </FONT>{{pokemon.fecha_de_captura}} 
+            <br>
+            <br><FONT COLOR="red">Badge del Entrenador: </FONT>{{pokemon.badge}} 
+            <br>
+            <br><FONT COLOR="red">¿En equipo actual?:</FONT> {{pokemon.en_equipo}} </p></h5>
+            <br>
+           <h5><a href="{%url 'ListP'%}">Regresar</a></h5>
+            <br>
+            <br>
+    </center>
+    {% endblock %}

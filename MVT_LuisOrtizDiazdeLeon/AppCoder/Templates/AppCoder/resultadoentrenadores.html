@@ -5,36 +5,40 @@
 {% block contenidoQueCambia %}
 
 
-    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+
     <br>
     <center>
-        <h1 style = "color:brown">Resultados:</h1>
+        <h1 style = "color:rgb(35, 255, 1)">Resultados:</h1>
         <br>
-        <b style="color:blue">⬇️ Badge # ⬇️</b> 
+        <h5><b style="color:blue"> 🟆 Badge # 🟆 </b> 
         <br>{{badge}}
         <br>
         <br>
-        <b style="color:blue"> ⬇️ Nombre del Entrenador ⬇️</b> 
+        <b style="color:blue"> 🟆 Nombre del Entrenador 🟆 </b> 
         <br>{%for entrenadores in entrenadores%}
         {{entrenadores.nombre}} {{entrenadores.apellido}}      
         <br>
         {%endfor%}
         <br>
-        <b style="color:blue"> ⬇️ Email ⬇️</b> 
+        <b style="color:blue"> 🟆 Email 🟆 </b> 
         <br>{%for entrenadores in entrenadores%}
         {{entrenadores.email}}  
         <br>
         {%endfor%}
         <br>
-        <b style="color:blue"> ⬇️ ID de Cursos Tomados ⬇️</b> 
+        <b style="color:blue"> 🟆 ID de Curso 🟆 </b> 
         <br>{%for entrenadores in entrenadores%}
             {{entrenadores.indicador}}    
         <br>
         {%endfor%}
         <br>
-        <b style="color:blue"> ⬇️ Pokemon Atrapados ⬇️</b> 
+        <b style="color:blue"> 🟆 Pokemon Atrapados 🟆 </b> 
         <br>{%for pokemon in pokemon%}
             • {{pokemon.nombre}}  <br>
             {%endfor%}
+        <br>
+        <br><a href="{% url 'BuscarE'%}"> Regresar ↵</a></h5>
+        <br>
+        <br>
     </center>
     {% endblock %}

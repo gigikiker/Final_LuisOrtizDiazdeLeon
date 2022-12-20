@@ -1,0 +1,21 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<br>
+<center><h3><b style = "color:red"><form method="post"> {% csrf_token %}
+    <br>
+    <br>⚠ Esta a punto de eliminar ⚠
+    <br>{{object.nombre}}
+    <br></b></h3>
+    <br><input type="submit" value="Eliminar"> 
+</form>
+<br>
+<br>
+<br>
+<h5><a href="{%url 'ListC'%}">Regresar ↵</a></h5>
+<br>
+<br>
+</center>
+{% endblock %}

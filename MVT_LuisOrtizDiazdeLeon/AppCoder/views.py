@@ -176,3 +176,58 @@ class PokemonCreate(CreateView):
     model = Pokemon
     fields = '__all__'
     success_url = '/AppCoder/pokemon/list/'
+
+#Update View Clase 24
+
+class CursoEdit(UpdateView):
+    model = Curso
+    fields = '__all__'
+    success_url = '/AppCoder/curso/list/'
+
+class EntrenadoresEdit(UpdateView):
+    model = Entrenadores
+    fields = '__all__'
+    success_url = '/AppCoder/entrenadores/list/'
+
+class PokemonEdit(UpdateView):
+    model = Pokemon
+    fields = '__all__'
+    success_url = '/AppCoder/pokemon/list/'
+
+
+#Detalle
+
+from django.views.generic.detail import DetailView
+
+class CursoDetail(DetailView):
+    model = Curso
+    template = 'AppCoder/curso_detail.html'
+
+class EntrenadoresDetail(DetailView):
+    model = Entrenadores
+    template = 'AppCoder/entrenadores_detail.html'
+
+class PokemonDetail(DetailView):
+    model = Pokemon
+    template = 'AppCoder/pokemon_detail.html'
+
+
+#Borrar
+
+class CursoDelete(DeleteView):
+    model = Curso
+    success_url = '/AppCoder/curso/list/'
+
+class EntrenadoresDelete(DeleteView):
+    model = Entrenadores
+    success_url = '/AppCoder/entrenadores/list/'
+
+class PokemonDelete(DeleteView):
+    model = Pokemon
+    success_url = '/AppCoder/pokemon/list/'
+
+
+#Pagina de Busqueda para 3 opciones
+
+def paginabusquedas(request):
+    return render(request,"AppCoder/paginabusquedas.html") 

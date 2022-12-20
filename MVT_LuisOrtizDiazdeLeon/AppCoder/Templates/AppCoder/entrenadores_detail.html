@@ -1,0 +1,24 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+    <br>
+    <center><h1><b style = "color:blue">Detalle del Entrenador</b></h1>
+    <br>
+        <p><h5>
+        <br><FONT COLOR="red">Badge: </FONT>{{entrenadores.badge}} 
+        <br>
+        <br><FONT COLOR="red">Nombre: </FONT>{{entrenadores.nombre}} 
+        <br> 
+        <br><FONT COLOR="red">Apellido: </FONT>{{entrenadores.apellido}} 
+        <br>
+        <br><FONT COLOR="red">Email: </FONT>{{entrenadores.email}} 
+        <br>
+        <br><FONT COLOR="red">Indicador Curso:</FONT> {{entrenadores.indicador}} </p></h5>
+        <br>
+       <h5><a href="{%url 'ListE'%}">Regresar</a></h5>
+    <br>
+    <br>
+    </center>
+    {% endblock %}

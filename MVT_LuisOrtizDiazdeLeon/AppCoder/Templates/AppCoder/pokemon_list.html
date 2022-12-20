@@ -5,25 +5,22 @@
 {% block contenidoQueCambia %}
 
 
-    <!--Aquí va lo que cambia, y lo asociado a esta vista :) -->
+ 
     <br>
     <center><h1><b style = "color:blue">Lista de Pokemon</b></h1>
     <br>
     {%for pokemon in object_list%}
       <p><h5><FONT COLOR="red">‡</FONT> {{pokemon.nombre}} <FONT COLOR="red">‡</FONT>
-      <br>{{pokemon.fecha_de_captura}}</h5></p>
-        <a href="">Ver</a>
-        <a href="">Editar</a>
-        <a href="">Borrar</a>
+      <br>Entrenador: #{{pokemon.badge}}</h5></p>
+        <a href="{% url 'DetailP' pokemon.id %}">Ver</a>
+        <a href="{% url 'EditP' pokemon.id %}">Editar</a>
+        <a href="{% url 'DeleteP' pokemon.id %}">Borrar</a>
       <br>
       <br>
-
-
-    
-    
-    
-      {%endfor%}
+    {%endfor%}
     <br>
+    <!-- <br><h5><a href="{% url 'BuscarP'%}"> Buscar por Nombre de Pokemon 🔍 </a></h5> -->
+    <br><h5><a href="{% url 'Inicio'%}"> Ir a Inicio 🏠 </a></h5>
     <br>
     </center>
     {% endblock %}

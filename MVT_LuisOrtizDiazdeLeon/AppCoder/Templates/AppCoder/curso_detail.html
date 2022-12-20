@@ -1,0 +1,19 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+  <br>
+  <center><h1><b style = "color:blue">Detalle del Curso</b></h1>
+  <br>
+  <p><h5><FONT COLOR="red">Nombre del Curso: </FONT>{{curso.nombre}} 
+  <br> 
+  <br><FONT COLOR="red">Indicador:</FONT> {{curso.indicador}} </p></h5>
+  <br>
+  <br>
+  <h5><a href="{%url 'ListC'%}">Regresar ↵</a></h5>
+  <br>
+  <br>
+  </center>
+
+  {% endblock %}
