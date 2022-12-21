@@ -34,26 +34,13 @@ def BuscarP(request):
     pokemon_todos = Pokemon.objects.filter(nombre=pokemon_views)
     return render(request, "AppCoder/resultadopokemon.html",{"nombre":pokemon_views,"pokemon":pokemon_todos})
 
-def Inicio(self):
+def Inicio(request):
     hoy = date.today()
-    
     navidad = date(2022,12,25)
-    
     restantes = navidad - hoy
-    
-    diccionario = {
-        'actual':hoy,
-        'christmas':navidad,        
-        'navidad':restantes
-    }
+    return render(request, "AppCoder/Inicio.html",{"hoy":hoy,"navidad":navidad,"restantes":restantes})
 
-    miHtml = open("C:/Users/luizi/Documents/Curso Python/Clase 19/MVT_LuisOrtizDiazdeLeon/AppCoder/Templates/AppCoder/Inicio.html")
-    plantilla = Template(miHtml.read())
-    miHtml.close()
-    miContexto = Context(diccionario) 
-    documento = plantilla.render(miContexto) 
 
-    return HttpResponse(documento)
 
 def Cursosapi(request):
     cursos_todos= Curso.objects.all()
