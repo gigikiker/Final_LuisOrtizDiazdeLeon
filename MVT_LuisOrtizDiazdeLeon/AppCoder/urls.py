@@ -3,22 +3,18 @@ from AppCoder import views
 
 urlpatterns = [
     path("", views.Inicio,name='Inicio'),
-    path("Cursos/", views.Cursos,name='Cursos'),
-    path("Busquedacursos/", views.buscarcursos,name='Buscar'), #clase 22
-    path("Buscar/", views.Buscar), #clase 22
-    path("Busquedaentrenadores/", views.buscarentrenadores,name='BuscarE'), #clase 22
-    path("BuscarE/", views.BuscarE), #clase 22
-    path("Busquedapokemon/", views.buscarpokemon,name='BuscarP'), #clase 22
-    path("BuscarP/", views.BuscarP), #clase 22
+    path("Cursos/", views.paginacursos,name='Cursos'),
+    path("Busquedacursos/", views.buscarcursos,name='Buscar'), 
+    path("Buscar/", views.Buscar), 
+    path("Busquedaentrenadores/", views.buscarentrenadores,name='BuscarE'), 
+    path("BuscarE/", views.BuscarE),
+    path("Busquedapokemon/", views.buscarpokemon,name='BuscarP'),
+    path("BuscarP/", views.BuscarP), 
     path("CursosApi/", views.Cursosapi),
     path("EntrenadoresApi/",views.Entrenadoresapi),
     path("PokemonApi/",views.Pokemonapi),
-    path("Entrenadores/", views.FEntrenadores,name='Entrenadores'),
-    path("Pokemon/", views.FPokemon,name='Pokemon'),
-    path("leercursos/", views.leer_cursos), #clase 23
-    path("crearcurso/", views.crear_cursos),
-    path("editarcurso/", views.editar_cursos),
-    path("eliminarcurso/", views.eliminar_cursos),
+    path("Entrenadores/", views.paginaentrenadores,name='Entrenadores'),
+    path("Pokemon/", views.paginapokemon,name='Pokemon'),
     path("curso/list/", views.CursoList.as_view(),name='ListC'),
     path("curso/create/", views.CursoCreate.as_view(),name='NewC'),
     path("entrenadores/list/", views.EntrenadoresList.as_view(),name='ListE'),
@@ -35,4 +31,5 @@ urlpatterns = [
     path("entrenadores/delete/<pk>", views.EntrenadoresDelete.as_view(),name='DeleteE'),
     path("pokemon/delete/<pk>", views.PokemonDelete.as_view(),name='DeleteP'),
     path("paginabusquedas/", views.paginabusquedas,name='Busquedas'),
+
 ]

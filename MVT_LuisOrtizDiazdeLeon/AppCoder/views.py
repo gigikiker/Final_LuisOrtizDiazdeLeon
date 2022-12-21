@@ -10,11 +10,6 @@ from AppCoder.forms import CursoFormulario, EntrenadoresFormulario, PokemonFormu
 def buscarcursos(request):
     return render(request,"AppCoder/busquedacursos.html") #clase 22
 
-#def Buscar(request):
-#    cursos_views = request.GET['indicador']
-#    cursos_todos = Curso.objects.filter(indicador=cursos_views)
-#    return HttpResponse(f'Estoy buscando el ID: {cursos_views} que corresponde al curso {cursos_todos}') #clase 22
-
 def Buscar(request):
     cursos_views = request.GET['indicador']
     cursos_todos = Curso.objects.filter(indicador=cursos_views)
@@ -59,59 +54,6 @@ def Inicio(self):
     documento = plantilla.render(miContexto) 
 
     return HttpResponse(documento)
-    #return render(request,'AppCoder/inicio.html')
-
-def Cursos(request):
-    if request.method == "POST":
-
-        miFormulario = CursoFormulario(request.POST)
-        print(miFormulario)
-
-        if miFormulario.is_valid:
-            informacion = miFormulario.cleaned_data
-            #curso = Curso**[Modelo]**(nombre**[Modelo]**=informacion["nombre_del_curso"]**[form]**,indicador**[Modelo]**=informacion["numero_identificador"]**[Form]**)
-            curso = Curso(nombre=informacion["nombre_del_curso"],indicador=informacion["numero_identificador"])
-            curso.save()
-            return Inicio(request)
-    else:
-        miFormulario = CursoFormulario()
-
-    return render(request, "AppCoder/Cursos.html", {"miFormulario":miFormulario})
-
-
-def FEntrenadores(request):
-    if request.method == "POST":
-
-        miFormulario = EntrenadoresFormulario(request.POST)
-        print(miFormulario)
-
-        if miFormulario.is_valid:
-            informacion = miFormulario.cleaned_data
-            #curso = Curso**[Modelo]**(nombre**[Modelo]**=informacion["nombre_del_curso"]**[form]**,indicador**[Modelo]**=informacion["numero_identificador"]**[Form]**)
-            entrenador = Entrenadores(nombre=informacion["nombre_del_entrenador"],apellido=informacion["apellido_del_entrenador"],email=informacion["email"],badge=informacion["id_de_entrandor"],indicador=informacion["curso"])
-            entrenador.save()
-            return Inicio(request)
-    else:
-        miFormulario = EntrenadoresFormulario()
-
-    return render(request, "AppCoder/Entrenadores.html", {"miFormulario":miFormulario})
-
-def FPokemon(request):
-    if request.method == "POST":
-
-        miFormulario = PokemonFormulario(request.POST)
-        print(miFormulario)
-
-        if miFormulario.is_valid:
-            informacion = miFormulario.cleaned_data
-            #curso = Curso**[Modelo]**(nombre**[Modelo]**=informacion["nombre_del_curso"]**[form]**,indicador**[Modelo]**=informacion["numero_identificador"]**[Form]**)
-            pokemon = Pokemon(nombre=informacion["nombre_del_pokemon"],tipo=informacion["tipo"],sexo=informacion["sexo"],badge=informacion["badge_del_entrenador"],fecha_de_captura=informacion["fecha_de_captura"],en_equipo=informacion["actualmente_en_equipo"])
-            pokemon.save()
-            return Inicio(request)
-    else:
-        miFormulario = PokemonFormulario()
-
-    return render(request, "AppCoder/Pokemon.html", {"miFormulario":miFormulario}) 
 
 def Cursosapi(request):
     cursos_todos= Curso.objects.all()
@@ -125,27 +67,7 @@ def Pokemonapi(request):
     pokemon_todos= Pokemon.objects.all()
     return HttpResponse(serializers.serialize('json',pokemon_todos)) 
 
-#CRUD>> CREATE, READ, UPDATE & DELETE
 
-def leer_cursos(request):
-    cursos_all = Curso.objects.all()
-    return HttpResponse(serializers.serialize('json',cursos_all))
-
-def crear_cursos(request):
-    curso = Curso(nombre="CursoTest",indicador=199)
-    curso.save()
-    return HttpResponse(f'Curso {curso.nombre} ha sido creado')
-
-def editar_cursos(request):
-    nombre_consulta = 'CursoTest'
-    Curso.objects.filter(nombre=nombre_consulta).update(nombre='NombrenuevoCursoTest')
-    return HttpResponse(f'Curso {nombre_consulta} ha sido actualizado')
-
-def eliminar_cursos(request):
-    nombre_nuevo = 'NombrenuevoCursoTest'
-    curso = Curso.objects.get(nombre=nombre_nuevo)
-    curso.delete()
-    return HttpResponse(f'Curso {nombre_nuevo} ha sido eliminado')
 
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
@@ -231,3 +153,15 @@ class PokemonDelete(DeleteView):
 
 def paginabusquedas(request):
     return render(request,"AppCoder/paginabusquedas.html") 
+
+
+#Pagina de cada modelo con 2 opciones y un Home
+
+def paginacursos(request):
+    return render(request,"AppCoder/Cursos.html") 
+
+def paginaentrenadores(request):
+    return render(request,"AppCoder/Entrenadores.html") 
+
+def paginapokemon(request):
+    return render(request,"AppCoder/Pokemon.html") 
