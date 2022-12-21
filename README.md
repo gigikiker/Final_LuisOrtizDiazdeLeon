@@ -4,7 +4,7 @@ Nombre: Luis Ortiz Diaz de Leon
 Comisión: #44675-python 
 email: luis.eodl@outlook.com
 
-AppCoder/admin
+AppCoder/admin/
 User: admin
 Password: 1234
 
